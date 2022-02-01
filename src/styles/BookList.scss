@@ -1,0 +1,161 @@
+@import "./Media.scss";
+.grid {
+  display: flex;
+  flex-flow: wrap;
+
+  .grid-item {
+    display: flex;
+    width: 100%;
+    @include media($medium) {
+      width: calc(100% / 2 - 20px);
+    }
+    @include media($large) {
+      width: calc(100% / 4 - 20px);
+    }
+    overflow: hidden;
+    margin: 0 10px 20px;
+    color: #000;
+    .actions {
+      font-size: 20px;
+      align-items: center;
+      width: 50%;
+      display: inline-flex;
+      position: relative;
+      top: -8px;
+      @include media($medium) {
+        position: static;
+        padding-top: 10px;
+        display: flex;
+        width: 100%;
+      }
+
+      .action-icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 5px;
+        &.delete-icon {
+          font-size: 24px;
+        }
+      }
+    }
+    img {
+      border-radius: 3px;
+      width: 100px;
+      height: 120px;
+      object-fit: cover;
+      object-position: center;
+      @include media($medium) {
+        width: 130px;
+        height: 195px;
+      }
+    }
+    .book-detail {
+      padding-left: 15px;
+      padding-top: 10px;
+      width: calc(100% - 100px);
+      @include media($medium) {
+        width: calc(100% - 130px);
+      }
+      p {
+        width: 100%;
+        white-space: nowrap;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      p {
+        margin-bottom: 5px;
+
+        &.title {
+          font-size: 16px;
+          color: #3f8acc;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+        &.light {
+          font-size: 12px;
+          color: #444;
+          font-weight: 400;
+          width: 50%;
+          display: inline-block;
+          @include media($medium) {
+            width: 100%;
+          }
+        }
+        &.medium {
+          font-size: 16px;
+          width: 50%;
+          display: inline-block;
+          @include media($medium) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+#search {
+  display: block;
+  height: 40px;
+  padding: 0.375rem 0.75rem;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  box-shadow: 0px 4px 10px 0px rgba(44, 101, 144, 0.1);
+  border-radius: 3px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin: 0 auto;
+  outline: none;
+  width: 170px;
+  max-width: 330px;
+  @include media($medium) {
+    width: 330px;
+  }
+}
+
+.content-box {
+  &.booklist-content-box {
+    .heading-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .form-group {
+      display: flex;
+      justify-content: center;
+      .search-bar {
+        position: relative;
+        margin-bottom: 30px;
+        svg {
+          position: absolute;
+          font-size: 15px;
+          top: 12.5px;
+          right: 12.5px;
+        }
+      }
+    }
+  }
+}
+
+.empty-data {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 400;
+  margin-top: 20px;
+  p {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  a {
+    text-decoration: underline;
+  }
+}

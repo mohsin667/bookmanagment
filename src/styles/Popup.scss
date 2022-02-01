@@ -1,0 +1,28 @@
+.popup {
+  min-width: 300px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  background-color: #1e2128;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+  transform: translate(-50%, -100%);
+  transition: all 0.3s;
+  border-radius: 3px;
+  &.open {
+    transform: translate(-50%, 50%);
+  }
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  .action {
+    margin-top: 20px;
+    .btn {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+}

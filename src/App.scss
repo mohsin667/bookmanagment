@@ -1,0 +1,133 @@
+@import "./styles/Media.scss";
+@import "./styles/Fonts.scss";
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: #3f8acc;
+}
+
+::selection {
+  color: #fff;
+  background: #3f8acc;
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbfcff;
+  color: #444;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  @include media($large) {
+    font-size: 14px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding-bottom: 70px;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1150px;
+}
+.container-fluid {
+  padding: 0 30px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.form-group {
+  position: relative;
+  .error {
+    position: absolute;
+    bottom: -28px;
+  }
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #007bff !important;
+}
+
+.content-box {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+  padding: 10px;
+  @include media($medium) {
+    padding: 20px;
+  }
+  &.booklist-content-box {
+    .box-heading {
+      border-bottom: none;
+      margin-bottom: 20px;
+      h2 {
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 500;
+        @include media($medium) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    @include media($medium) {
+      font-size: 20px;
+    }
+  }
+}
+
+.content-box .box-heading {
+  border-bottom: 1px solid rgb(241, 241, 241);
+  margin-bottom: 30px;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  padding: 0 20px;
+}
+
+.btn {
+  border: none;
+  background-color: #3f8acc;
+  color: #fff;
+  border-radius: 3px;
+  height: 35px;
+  cursor: pointer;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+  transition: all 0.3s;
+  padding: 8px 10px;
+  @include media($large) {
+    padding: 8px 20px;
+  }
+  &.btn-light {
+    background-color: rgb(255, 155, 138);
+  }
+}

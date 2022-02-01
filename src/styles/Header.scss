@@ -1,0 +1,423 @@
+@import "./Media.scss";
+@mixin after {
+  content: "";
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  position: absolute;
+  width: 2px;
+  height: calc(100% - 20px);
+  right: 0;
+  @include media($medium) {
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+  }
+}
+
+.header {
+  padding: 10px 0;
+  background-color: #ebf8ff;
+  margin-bottom: 35px;
+
+  @include media($large) {
+    margin-bottom: 70px;
+  }
+  &.mainHeader {
+    position: relative;
+    .inner-nav {
+      position: absolute;
+      height: 100vh;
+      width: 70vw;
+      left: -110%;
+      background-color: #fff;
+      padding-top: 10px;
+      top: 0;
+      box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+      transition: all 0.3s ease-in-out;
+      z-index: 99;
+      @include media($medium) {
+        box-shadow: none;
+      }
+      .logo {
+        max-width: 120px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        padding-left: 15px;
+        @include media($medium) {
+          padding-left: 0;
+          max-width: 90px;
+          margin-bottom: 0px;
+        }
+        @include media($large) {
+          max-width: 120px;
+        }
+      }
+      @include media($medium) {
+        padding-left: 0px;
+        padding-top: 0px;
+        background-color: transparent;
+        position: static;
+        height: auto;
+        width: auto;
+      }
+      .menu {
+        flex-flow: column;
+        align-items: flex-start;
+        margin-top: 30px;
+        width: 100%;
+        @include media($medium) {
+          width: auto;
+          margin-top: 0;
+          flex-flow: row;
+          align-items: center;
+        }
+        .logout {
+          display: flex;
+          align-items: center;
+          margin-right: 20px;
+          cursor: pointer;
+          padding-left: 15px;
+          @include media($medium) {
+            padding-left: 0;
+            margin-right: 30px;
+          }
+          p {
+            font-weight: 400;
+            margin-bottom: 0;
+            font-size: 16px;
+            margin-left: 10px;
+            position: relative;
+            &:after {
+              content: "";
+              transition: all 0.3s ease-in-out;
+              background-color: transparent;
+              position: absolute;
+              width: 100%;
+              height: 4px;
+              bottom: -5px;
+              left: 0;
+            }
+            &:hover {
+              &:after {
+                background-color: #3f8acc;
+              }
+            }
+            @include media($medium) {
+              font-size: 12px;
+            }
+            @include media($large) {
+              font-size: 14px;
+            }
+          }
+        }
+        .cart {
+          width: 100%;
+          @include media($medium) {
+            width: auto;
+          }
+          a {
+            font-size: 16px;
+            width: 100%;
+            position: relative;
+            padding: 10px 10px 10px 15px;
+            &.active {
+              background-color: #ebf8ff;
+              @include media($medium) {
+                background-color: transparent;
+              }
+            }
+            @include media($medium) {
+              padding: 0;
+              width: auto;
+            }
+
+            @include media($medium) {
+              font-size: 12px;
+            }
+            @include media($large) {
+              font-size: 14px;
+            }
+            .cart-counter + span {
+              @include media($medium) {
+                position: relative;
+              }
+              &:after {
+                @include after;
+              }
+            }
+            &.active,
+            &:hover {
+              .cart-counter + span {
+                &:after {
+                  background-color: #3f8acc;
+                }
+              }
+            }
+          }
+        }
+        ul {
+          flex-flow: column;
+          align-items: flex-start;
+          margin-left: 0;
+          width: 100%;
+          @include media($medium) {
+            width: auto;
+            flex-flow: row;
+            align-items: center;
+          }
+          li {
+            font-size: 16px;
+            margin-right: 0;
+            width: 100%;
+            @include media($medium) {
+              width: 100%;
+              margin-bottom: 0px;
+              font-size: 12px;
+              margin-right: 20px;
+            }
+            @include media($large) {
+              font-size: 14px;
+              margin-right: 30px;
+            }
+          }
+        }
+        .cart {
+          margin-bottom: 15px;
+          @include media($medium) {
+            margin-bottom: 0px;
+          }
+        }
+        .user-profile {
+          display: none;
+          @include media($medium) {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+.inner-nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: column;
+  @include media($medium) {
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .logo {
+    max-width: 90px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    @include media($medium) {
+      max-width: 110px;
+      margin-bottom: 0;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  form {
+    input {
+      border: none;
+      outline: none;
+      height: 35px;
+      font-size: 14px;
+      padding: 8px;
+      border-radius: 3px;
+      box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+      border: 1px solid transparent;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      color: #444;
+
+      &:focus {
+        background-color: #fff;
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        outline: 0;
+      }
+    }
+    button {
+      border: none;
+      background-color: #3f8acc;
+      color: #fff;
+      border-radius: 3px;
+      padding: 8px 10px;
+      height: 35px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+      transition: all 0.3s;
+      @include media($small) {
+        padding: 8px 20px;
+      }
+      &:hover,
+      &:focus {
+        background-color: rgba(63, 138, 204, 0.9);
+        color: #fff;
+      }
+    }
+  }
+}
+
+.login-form {
+  width: 100%;
+  @include media($medium) {
+    width: auto;
+  }
+  form {
+    display: flex;
+    justify-content: space-between;
+    @include media($medium) {
+      justify-content: flex-start;
+    }
+
+    .form-group {
+      width: calc(100% / 2 - 40px);
+      @include media($medium) {
+        width: auto;
+        margin-right: 15px;
+      }
+      input {
+        width: 100%;
+        min-width: auto;
+        @include media($medium) {
+          min-width: 220px;
+        }
+      }
+    }
+  }
+}
+
+.cart {
+  margin-right: 30px;
+  display: flex;
+  cursor: pointer;
+  line-height: normal;
+  position: relative;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  .cart-counter {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #3f8acc;
+    text-align: center;
+    padding: 0 5px;
+    font-size: 10px;
+    line-height: 1.6;
+    top: 5px;
+    left: 15px;
+    @include media($medium) {
+      top: -5px;
+      left: 0px;
+    }
+  }
+  span {
+    color: #444;
+    font-weight: 400;
+    margin-left: 15px;
+  }
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  p {
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+  .profile-image {
+    img {
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    li {
+      margin-right: 30px;
+      a {
+        color: #444 !important;
+        font-weight: 400;
+        position: relative;
+        width: 100%;
+        display: block;
+        white-space: nowrap;
+        padding: 10px 10px 10px 15px;
+        @include media($medium) {
+          padding: 0;
+        }
+        &.active {
+          background-color: #eaf7ff;
+          @include media($medium) {
+            background-color: transparent;
+          }
+        }
+        &:after {
+          @include after;
+        }
+        &.active,
+        &:hover {
+          &:after {
+            background-color: #3f8acc;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include media($medium) {
+    display: none;
+  }
+  img {
+    max-width: 120px;
+  }
+}
+
+#logo {
+  width: 30px;
+  height: 30px;
+  @include media($medium) {
+    width: 50px;
+    height: 50px;
+  }
+  path {
+    fill: #3f8acc;
+  }
+}

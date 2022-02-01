@@ -1,0 +1,89 @@
+@import "./Media.scss";
+.signup-wrapper {
+  display: flex;
+  align-items: center;
+  @include media($large) {
+    align-items: flex-end;
+  }
+
+  .form-image {
+    padding-right: 7.5px;
+    display: none;
+    width: 50%;
+    @include media($medium) {
+      display: block;
+    }
+    @include media($medium) {
+      max-width: 450px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .signup-form {
+    width: 100%;
+    @include media($medium) {
+      width: 50%;
+      padding-left: 7.5px;
+    }
+    @include media($large) {
+      padding-left: 48px;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 30px;
+      @include media($medium) {
+        font-size: 24px;
+      }
+    }
+    label {
+      font-size: 12px;
+      color: #808080;
+      display: block;
+      margin-bottom: 8px;
+      margin-top: 26px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      height: 40px;
+      padding: 0.375rem 0.75rem;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid transparent;
+      box-shadow: 0px 4px 10px 0px rgba(44, 101, 144, 0.1);
+      border-radius: 3px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      @include media($medium) {
+        height: 50px;
+      }
+      &:focus {
+        background-color: #fff;
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        outline: 0;
+      }
+      &[type="submit"] {
+        cursor: pointer;
+        background-color: #3f8acc;
+        color: #fff;
+        height: 50px;
+        transition: all 0.3s;
+        margin-top: 26px;
+        font-size: 14px;
+        border-radius: 3px;
+        @include media($medium) {
+          height: 60px;
+        }
+        &:hover,
+        &:focus {
+          background-color: rgba(63, 138, 204, 0.9);
+          color: #fff;
+        }
+      }
+    }
+  }
+}

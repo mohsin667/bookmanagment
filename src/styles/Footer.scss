@@ -1,0 +1,33 @@
+@import "./Media.scss";
+footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+  flex-flow: wrap;
+  ul {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    li {
+      display: inline-block;
+      a {
+        color: #007bff !important;
+        font-weight: 400;
+        font-size: 12px;
+        @include media($large) {
+          font-size: 14px;
+        }
+        margin: 0 5px;
+        &:hover {
+          color: #0056b3;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  p {
+    font-weight: 400;
+    font-size: 12px;
+    color: #6c757d;
+  }
+}

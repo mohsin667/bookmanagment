@@ -1,0 +1,126 @@
+@import "./Media.scss";
+.cart-content-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 20px 20px 20px 0;
+  &:last-child {
+    border-bottom: 1px solid transparent;
+  }
+  * {
+    user-select: none;
+  }
+  p,
+  h3 {
+    margin: 5px 0;
+  }
+  h3 {
+    font-size: 14px;
+    @include media($medium) {
+      font-size: 18px;
+    }
+  }
+  p {
+    font-size: 12px;
+    @include media($medium) {
+      font-size: 14px;
+    }
+  }
+  .sh-mg {
+    border-radius: 3px;
+    overflow: hidden;
+    img {
+      width: 70px;
+      height: 100px;
+      object-fit: cover;
+      @include media($medium) {
+        width: 80px;
+        height: 120px;
+      }
+    }
+  }
+  .sh-delete {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .sh-details {
+    width: 80px;
+    @include media($medium) {
+      width: 280px;
+    }
+  }
+  .sh-actions {
+    display: flex;
+    align-items: center;
+
+    span,
+    p {
+      width: 25px;
+      height: 25px;
+      margin: 0 4px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      @include media($medium) {
+        width: 30px;
+        height: 30px;
+      }
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    p {
+      cursor: initial;
+    }
+  }
+}
+
+.cart-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+  .content-box {
+    width: 100%;
+    @include media($medium) {
+      width: calc(100% - 430px);
+    }
+  }
+  .fi-details {
+    width: 100%;
+    margin-top: 30px;
+    @include media($medium) {
+      margin-top: 0;
+      width: calc(400px - 15px);
+    }
+    ul {
+      display: block;
+      margin-left: 0;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        flex-flow: wrap;
+        .divider {
+          width: 100%;
+          border-bottom: 1px solid #f1f1f1;
+          margin: 10px 0;
+        }
+        p {
+          margin-bottom: 0;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        a {
+          color: #3f8acc !important;
+        }
+      }
+    }
+    .btn {
+      text-align: center;
+    }
+  }
+}
